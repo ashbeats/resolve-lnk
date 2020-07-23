@@ -6,6 +6,8 @@ This readme will not make much sense till it's in v1.0.0
 
 `yarn add @recent-cli/resolve-lnk`
 
+![All Tests](https://github.com/ashbeats/resolve-lnk/workflows/All%20Tests/badge.svg)
+
 This extracts the destination from \*.lnk files.
 
 So, notepad.lnk will return notepad.exe
