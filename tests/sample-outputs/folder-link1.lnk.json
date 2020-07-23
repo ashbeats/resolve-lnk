@@ -1,0 +1,22 @@
+{
+  "relevant_flags": {
+    "HasTargetIdList": false,
+    "HasLinkInfo": true,
+    "HasName": true,
+    "HasRelativePath": true,
+    "HasWorkingDir": false,
+    "HasArguments": true,
+    "HasIconLocation": true,
+    "IsUnicode": true,
+    "ForceNoLinkInfo": true
+  },
+  "new-index": 555,
+  "locationItemSize": 167,
+  "locationBytes": 167,
+  "locationInfoHeaderSize": 28,
+  "localPathOffset": 52,
+  "LocalPath": "C:\\",
+  "commonPathOffset": 96,
+  "CommonPath": "ashbeats\\software-source-codes\\2020-projects\\2020-YoutubeReactorsTools",
+  "Destination": "C:\\ashbeats\\software-source-codes\\2020-projects\\2020-YoutubeReactorsTools"
+}
