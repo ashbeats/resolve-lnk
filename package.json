@@ -9,7 +9,7 @@
     "shelllink",
     "shortcut"
   ],
-  "version": "0.0.1-alpha",
+  "version": "0.0.1-alpha.1",
   "main": "src/resolve_lnk_basic.js",
   "files": [
     "src/"
