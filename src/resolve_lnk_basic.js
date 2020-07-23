@@ -7,23 +7,22 @@
  @author ash
  
  */
-const fs                  = require("fs");
-const util        = require("util");
+const fs = require("fs");
+const util = require("util");
 const { castToDataFlags } = require("./dataFlags.js");
-const {dd} = require('dumper.js');
-const decode_lnk_string = require('./decode_lnk_string.js');
+// const { dd } = require("dumper.js");
+const decode_lnk_string = require("./decode_lnk_string.js");
+const {ResolveLnkException} = require("./resolve_lnk_exception.js");
 
 function resolve_lnk_basic(rawBytes) {
-  
-
+  let bag = {};
   try {
     let index = 76;
-    let bag = {};
+
     const headerBytes = Buffer.alloc(index);
     headerBytes.set(rawBytes.subarray(0, index), 0);
 
     const dataFlagInt = rawBytes.readInt32LE(20);
-
     // https://github.com/EricZimmerman/Lnk/blob/9c8c9f49e1386b261cbd0ac6a891fed131cabb7d/Lnk/Header.cs#L9
 
     let relevant_flags = castToDataFlags(dataFlagInt);
@@ -98,15 +97,10 @@ function resolve_lnk_basic(rawBytes) {
 
     // bag["CommonPath"] = CommonPath;
 
-   return LocalPath + CommonPath;
-    
+    return LocalPath + CommonPath;
   } catch (e) {
-    console.log("Error happened inside dumb lnk parser");
-    // dump({
-    //   relevant_flags: relevant_flags
-    // });
-    
-    return null;
+    throw new ResolveLnkException(bag, e);     
+    // return null;
   }
 }
 
@@ -114,6 +108,6 @@ const readFilePromise = util.promisify(fs.readFile);
 
 module.exports = {
   resolve_lnk_basic,
-  resolve_lnk_basic_from: async (filename) =>
+  resolve_lnk_basic_from: async filename =>
     resolve_lnk_basic(await readFilePromise(filename))
 };
