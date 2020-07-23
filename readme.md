@@ -12,14 +12,10 @@ Does not depend on ffi, com or cmd utilities. All parsing is done in basic js.
 
 See tests for more usage.
 
-Tiny (3kb)
+Tiny (3.6kb) with no-dependencies
   
 ```
-
-Usage:
-    lnkDestination('')
-
-
+const d = resolve_lnk_basic(bytes)
 ```
 
 # Created for
