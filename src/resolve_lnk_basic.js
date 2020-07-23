@@ -27,28 +27,28 @@ function resolve_lnk_basic(rawBytes) {
     // https://github.com/EricZimmerman/Lnk/blob/9c8c9f49e1386b261cbd0ac6a891fed131cabb7d/Lnk/Header.cs#L9
 
     let relevant_flags = castToDataFlags(dataFlagInt);
-    bag["relevant_flags"] = relevant_flags;
+    bag["flags"] = relevant_flags;
 
     const shellItemSize = rawBytes.readInt16LE(index);
     index += 2;
 
     index = shellItemSize + index;
-    bag["new-index"] = index;
+    // bag["new-index"] = index;
 
     const locationItemSize = rawBytes.readInt32LE(index);
-    bag["locationItemSize"] = locationItemSize;
+    // bag["locationItemSize"] = locationItemSize;
 
     const locationBytes = Buffer.alloc(locationItemSize);
     locationBytes.set(rawBytes.subarray(index, index + locationItemSize), 0);
 
-    bag["locationBytes"] = locationBytes.length;
+    // bag["locationBytes"] = locationBytes.length;
 
     const locationInfoHeaderSize = locationBytes.readInt32LE(4);
-    bag["locationInfoHeaderSize"] = locationInfoHeaderSize;
+    // bag["locationInfoHeaderSize"] = locationInfoHeaderSize;
     // Local path: C:\
     const localPathOffset = locationBytes.readInt32LE(16);
 
-    bag["localPathOffset"] = localPathOffset;
+    // bag["localPathOffset"] = localPathOffset;
 
     let LocalPath = decode_lnk_string(
       "ascii",
@@ -58,7 +58,7 @@ function resolve_lnk_basic(rawBytes) {
     );
 
     // Common path:
-    bag["LocalPath"] = LocalPath;
+    // bag["LocalPath"] = LocalPath;
 
     const commonPathOffset = locationBytes.readInt32LE(24);
     bag["commonPathOffset"] = commonPathOffset;
@@ -96,11 +96,10 @@ function resolve_lnk_basic(rawBytes) {
       CommonPath = unicodeCommonPath;
     }
 
-    bag["CommonPath"] = CommonPath;
+    // bag["CommonPath"] = CommonPath;
 
-    bag["Destination"] = LocalPath + CommonPath;
-
-    return bag;
+   return LocalPath + CommonPath;
+    
   } catch (e) {
     console.log("Error happened inside dumb lnk parser");
     // dump({

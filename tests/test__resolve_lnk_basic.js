@@ -8,7 +8,7 @@ const fs = require("fs");
 
 describe("Can parse lnks?", () => {
   
-  const testData = path.join(__dirname, "samples-lnks/folder-link1.lnk");
+  const testData = path.join(__dirname, "sample-lnks/folder-link1.lnk");
   const testDataResult = JSON.parse(
     fs
       .readFileSync(
@@ -23,6 +23,6 @@ describe("Can parse lnks?", () => {
   
   test("and extract details from lnk files?", async () => {
     let data = await resolve_lnk_basic_from(testData);
-    expect(data).toMatchObject(testDataResult);
+    expect(data).toMatch("C:\\ashbeats\\software-source-codes\\2020-projects\\2020-YoutubeReactorsTools");
   });
 });

@@ -6,7 +6,9 @@ This readme will not make much sense till it's in v1.0.0
 
 `yarn add @recent-cli/resolve-lnk`
 
-This only extracts the destination from \*.lnk files.
+This extracts the destination from \*.lnk files.
+
+So, notepad.lnk will return notepad.exe
 
 Does not depend on ffi, com or cmd utilities. All parsing is done in basic js.
 
