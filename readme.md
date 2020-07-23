@@ -20,6 +20,11 @@ Tiny (3.6kb) with no-dependencies
 const d = resolve_lnk_basic(bytes)
 ```
 
+# Why?
+
+Shell Link (.LNK) Binary File Format, which contains information that can be used to access another data object.
+ The Shell Link Binary File Format is the format of Windows files with the extension "LNK".
+
 # Created for
 - @recent-cli project (Windows recent file's in cli)
 
