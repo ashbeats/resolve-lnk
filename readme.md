@@ -1,6 +1,6 @@
 ## Not ready for use (Ultra Alpha)
 
-This readme will not make much sense till it's in v0.0.1. 
+This readme will not make much sense till it's in v1.0.0 
 
 ## LNK-Parser
 

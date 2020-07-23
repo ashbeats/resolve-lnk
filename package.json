@@ -24,5 +24,17 @@
   },
   "author": "Ash <ashbeats@gmail.com>",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashbeats/resolve-lnk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashbeats/resolve-lnk/issues"
+  },
+  "homepage": "https://github.com/ashbeats/resolve-lnk#readme"
 }
