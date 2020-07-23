@@ -4,6 +4,8 @@ This readme will not make much sense till it's in v1.0.0
 
 ## LNK-Parser
 
+`yarn add @recent-cli/resolve-lnk`
+
 This only extracts the destination from \*.lnk files.
 
 Does not depend on ffi, com or cmd utilities. All parsing is done in basic js.
