@@ -9,10 +9,10 @@
     "shelllink",
     "shortcut"
   ],
-  "version": "0.0.1",
-  "main": "src/index.js",
+  "version": "0.0.2",
+  "main": "dist/index.js",
   "files": [
-    "src/"
+    "dist/"
   ],
   "scripts": {
     "test": "yarn build && jest",
