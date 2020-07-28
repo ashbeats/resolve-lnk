@@ -14,7 +14,7 @@ const { castToDataFlags } = require("./dataFlags.js");
 const decode_lnk_string = require("./decode_lnk_string.js");
 const {ResolveLnkException} = require("./resolve_lnk_exception.js");
 
-function resolve_lnk_basic(rawBytes) {
+function resolveBuffer(rawBytes) {
   let bag = {};
   try {
     let index = 76;
@@ -107,7 +107,10 @@ function resolve_lnk_basic(rawBytes) {
 const readFilePromise = util.promisify(fs.readFile);
 
 module.exports = {
-  resolve_lnk_basic,
-  resolve_lnk_basic_from: async filename =>
-    resolve_lnk_basic(await readFilePromise(filename))
+  resolveBuffer,
+  resolve      : async filename =>
+    resolveBuffer(await readFilePromise(filename)),
+  
+  ResolveLnkException, 
+  
 };

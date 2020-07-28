@@ -1,38 +1,52 @@
-## Not ready for use (Ultra Alpha)
+# Resolve Lnk
 
-This readme will not make much sense till it's in v1.0.0 
+Easily extract destinations from Windows shortcut files (*.lnk)
 
-## LNK-Parser
 
-`yarn add @recent-cli/resolve-lnk`
 
-![All Tests](https://github.com/ashbeats/resolve-lnk/workflows/All%20Tests/badge.svg)
+**Benefits**
 
-This extracts the destination from \*.lnk files.
+- Fast. Written in pure JS. 
+- Tiny library! ( 3.85 KiB )
+- Does not depend on external tools, Wscript or COM calls. 
 
-So, notepad.lnk will return notepad.exe
 
-Does not depend on ffi, com or cmd utilities. All parsing is done in basic js.
 
-See tests for more usage.
+## What are Lnk files?
 
-Tiny (3.6kb) with no-dependencies
-  
+Shell Link (.LNK) Binary File Format, which contains information that can be used to access another data object. The Shell Link Binary File Format is the format of Windows files with the extension "LNK".
+
+Shortcuts on Windows, are lnk files. 
+
+
+
+## Install ![All Tests](https://github.com/ashbeats/resolve-lnk/workflows/All%20Tests/badge.svg)
+
+```bash
+$ yarn add @recent-cli/resolve-lnk
 ```
-const d = resolve_lnk_basic(bytes)
+
+
+
+## Usage
+
+```javascript
+const Lnk = require("@recent-cli/resolve-lnk")
+
+// # Supports Buffer | Uint8Array input
+let output = Lnk.resolveBuffer(
+    fs.readFileSync()
+); 
+
+// # Supports path names. Returns a Promise
+(async () => await Lnk.resolve("example.lnk"))();
+
 ```
 
-# Why?
 
-Shell Link (.LNK) Binary File Format, which contains information that can be used to access another data object.
- The Shell Link Binary File Format is the format of Windows files with the extension "LNK".
 
-# Created for
-- @recent-cli project (Windows recent file's in cli)
 
-# TODO
-   [X] Remove directory limitation from the project. Move that to `@recent-cli/lnk-plugin`
 
-Resources Used:
-===
-https://github.com/EricZimmerman/Lnk
+#### Todo
+
+- Add support for the browser	
