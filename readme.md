@@ -20,7 +20,7 @@ Shortcuts on Windows, are lnk files.
 
 
 
-## Install ![All Tests](https://github.com/ashbeats/resolve-lnk/workflows/All%20Tests/badge.svg)
+## Install ![All Tests](https://github.com/ashbeats/resolve-lnk/actions/workflows/all-tests.yml/badge.svg?event=push)
 
 ```bash
 $ yarn add @recent-cli/resolve-lnk
