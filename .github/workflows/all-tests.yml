@@ -20,12 +20,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         if: ${{ github.event == 'pull_request' }}
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         if: ${{ github.event != 'pull_request' }}
 
       - name: Tests on ${{ matrix.os }} - Node ${{ matrix.node-version }}
